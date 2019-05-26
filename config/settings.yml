@@ -1,0 +1,14 @@
+defaults: &defaults
+  application_name: 'Application Name'
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+staging:
+  <<: *defaults

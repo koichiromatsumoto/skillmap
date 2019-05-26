@@ -1,0 +1,98 @@
+.container-fluid {
+  margin-top: 5px;
+}
+
+.content-wrapper {
+  .content-header {
+    .content-title {
+      padding: 10px 0;
+    }
+  }
+  .box-wrapper {
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+
+    .box-header {
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid #f4f4f4;
+      position: relative;
+
+      .box-title {
+        display: inline-block;
+        font-size: 17px;
+        margin: 0;
+        line-height: 1;
+      }
+
+      .box-tools {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        .btn {
+          margin-left: 5px;
+          border-radius: 3px;
+          box-shadow: none;
+        }
+
+        .btn-box-tool {
+          padding: 5px;
+          font-size: 12px;
+        }
+      }
+
+      &:before,
+      &:after {
+        display: table;
+        content: " ";
+      }
+      &:after {
+        clear: both;
+      }
+    } /* .box-header */
+
+    .box-body {
+      padding: 20px 10px;
+
+      .table {
+        margin-bottom: 0;
+
+        .actions {
+          background: transparent;
+          margin-top: 0px;
+          margin-bottom: 0;
+          font-size: 12px;
+          padding: 7px 5px;
+          top: 15px;
+          right: 10px;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+
+          a {
+            margin-right: 5px;
+          }
+        }
+      }
+    } /* .box-body */
+
+    .box-footer {
+      border-top: 1px solid #f4f4f4;
+      padding: 10px;
+    } /* .box-footer */
+  } /* .box-wrapper */
+
+  .box-wrapper.with-border {
+    border-top: 3px solid $default_color;
+    border-radius: 4px;
+  }
+
+  .box-wrapper.box-primary { border-top-color: $primary_color; }
+  .box-wrapper.box-success { border-top-color: $success_color; }
+  .box-wrapper.box-info { border-top-color: $info_color; }
+  .box-wrapper.box-warning { border-top-color: $warning_color; }
+  .box-wrapper.box-danger { border-top-color: $danger_color; }
+}

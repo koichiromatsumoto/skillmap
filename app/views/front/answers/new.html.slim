@@ -1,0 +1,26 @@
+.layer-modal.modal.fade tabindex="-1" role="dialog" aria-hidden="true"
+.content-wrapper.new-answer
+  section.content-body
+    = form_tag front_answers_path do
+      .box-wrapper
+        .box-header
+          h2.box-title
+            .box-tools.float-right
+              = link_to '追加', new_front_layer_path, remote: true, class: 'btn btn-sm btn-secondary'
+        .box-body
+          table.table style="table-layout: fixed;"
+            thead.thead-dark
+              tr
+                th scope="col" カテゴリー1
+                th scope="col" カテゴリー2
+                th scope="col" カテゴリー3
+                th scope="col" カテゴリー4
+                th scope="col" カテゴリー5
+                th scope="col" カテゴリー6
+                th scope="col" レベル
+            tbody
+              - @answers.each do |answer|
+                = render 'new', answer: answer
+        .box-footer
+          .text-center
+            = submit_tag '登録する', class: 'btn btn-primary'

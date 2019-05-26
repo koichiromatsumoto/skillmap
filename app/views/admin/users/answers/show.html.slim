@@ -1,0 +1,24 @@
+.content-wrapper
+  section.content-body
+    .box-wrapper
+      .box-body
+        table.table style="table-layout: fixed;"
+          thead.thead-dark
+            tr
+              th scope="col" カテゴリー1
+              th scope="col" カテゴリー2
+              th scope="col" カテゴリー3
+              th scope="col" カテゴリー4
+              th scope="col" カテゴリー5
+              th scope="col" カテゴリー6
+              th scope="col" レベル
+          tbody
+            - @answer.details.each do |answer|
+              tr
+                td = answer.layer.category1.name
+                td = answer.layer.category2&.name
+                td = answer.layer.category3&.name
+                td = answer.layer.category4&.name
+                td = answer.layer.category5&.name
+                td = answer.layer.category6&.name
+                td = answer.score

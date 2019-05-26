@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title = Settings.application_name
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+      = link_to Settings.application_name, '#', class: 'navbar-brand'
+      button.navbar-toggler.d-lg-none aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarsExampleDefault" data-toggle="collapse" type="button"
+        span.navbar-toggler-icon
+
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          - if user_signed_in? && current_user.admin?
+            li.nav-item.active = link_to 'ユーザー管理', admin_users_path, class: 'nav-link'
+            li.nav-item.active = link_to 'カテゴリー管理', admin_categories_path, class: 'nav-link'
+            li.nav-item.active = link_to 'レイヤー管理', admin_layers_path, class: 'nav-link'
+
+        ul.navbar-nav
+          - if user_signed_in?
+            li = link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', method: :delete
+          - else
+            li = link_to 'ログイン', new_user_session_path, class: 'nav-link'
+
+    .container-fluid
+      = flash_messages
+      = yield
+
+    = javascript_include_tag 'application'

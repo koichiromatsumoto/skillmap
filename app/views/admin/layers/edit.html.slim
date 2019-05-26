@@ -1,0 +1,14 @@
+.content-wrapper
+  section.content-header
+    .content-title
+      h1 カテゴリー管理
+  section.content-body
+    .box-wrapper
+      .box-header
+        h2.box-title 編集
+      .box-body
+        = form_for @layer, url: admin_layer_path(@layer) do |f|
+          = render 'form', f: f
+
+          .text-center
+            = f.submit '更新する', class: 'btn btn-primary'

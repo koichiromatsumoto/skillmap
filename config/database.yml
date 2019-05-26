@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  collation: utf8_general_ci
+  pool: 5
+  host:     <%= ENV['DATABASE_HOST'] %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket:   <%= ENV['DATABASE_SOCKET'] %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: skillmap_test
+
+production:
+  <<: *default
+
+staging:
+  <<: *default

@@ -1,0 +1,61 @@
+.modal-dialog
+  .modal-content
+    .content-wrapper
+      section.content-body
+        .box-wrapper
+          .box-header
+            h2.box-title 新規登録
+          .box-body
+            = form_for layer, url: front_layers_path, remote: true do |f|
+              = error_messages layer
+
+              .row
+                .col-sm-12
+                  .form-group.row
+                    .col-sm-2
+                      = f.label :category1_id, 'カテゴリー1', class: 'col-from-label'
+                    .col-sm-10
+                      = f.select :category1_id, Category.where(root: true).pluck(:name, :id), { include_blank: true }, class: 'form-control'
+
+              .row
+                .col-sm-12
+                  .form-group.row
+                    .col-sm-2
+                      = f.label :category2_id, 'カテゴリー2', class: 'col-from-label'
+                    .col-sm-10
+                      = f.select :category2_id, Category.where(root: false).pluck(:name, :id), { include_blank: true }, class: 'form-control'
+
+              .row
+                .col-sm-12
+                  .form-group.row
+                    .col-sm-2
+                      = f.label :category3_id, 'カテゴリー3', class: 'col-from-label'
+                    .col-sm-10
+                      = f.select :category3_id, Category.where(root: false).pluck(:name, :id), { include_blank: true }, class: 'form-control'
+
+              .row
+                .col-sm-12
+                  .form-group.row
+                    .col-sm-2
+                      = f.label :category4_id, 'カテゴリー4', class: 'col-from-label'
+                    .col-sm-10
+                      = f.select :category4_id, Category.where(root: false).pluck(:name, :id), { include_blank: true }, class: 'form-control'
+
+              .row
+                .col-sm-12
+                  .form-group.row
+                    .col-sm-2
+                      = f.label :category2_id, 'カテゴリー2', class: 'col-from-label'
+                    .col-sm-10
+                      = f.select :category5_id, Category.where(root: false).pluck(:name, :id), { include_blank: true }, class: 'form-control'
+
+              .row
+                .col-sm-12
+                  .form-group.row
+                    .col-sm-2
+                      = f.label :category6_id, 'カテゴリー6', class: 'col-from-label'
+                    .col-sm-10
+                      = f.select :category6_id, Category.where(root: false).pluck(:name, :id), { include_blank: true }, class: 'form-control'
+
+              .text-center
+                = f.submit '登録する', class: 'btn btn-primary'

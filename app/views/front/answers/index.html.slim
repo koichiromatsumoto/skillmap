@@ -1,0 +1,18 @@
+.content-wrapper
+  section.content-body
+    .box-wrapper
+      .box-body
+        = link_to "回答する", new_front_answer_path
+
+    .box-wrapper
+      .box-body
+        table.table style="table-layout: fixed;"
+          thead.thead-dark
+            tr
+              th #
+              th 回答日時
+          tbody
+            - current_user.answers.each do |answer|
+              tr
+                td = link_to "#{answer.count} 回目", front_answer_path(answer)
+                td = l answer.created_at, format: :long

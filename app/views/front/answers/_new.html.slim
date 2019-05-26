@@ -1,0 +1,10 @@
+tr
+  td = answer.layer.category1.name
+  td = answer.layer.category2&.name
+  td = answer.layer.category3&.name
+  td = answer.layer.category4&.name
+  td = answer.layer.category5&.name
+  td = answer.layer.category6&.name
+  td
+    = hidden_field_tag 'answers[][layer_id]', answer.layer.id
+    = select_tag 'answers[][score]', options_for_select([[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5]], answer.score), class: 'form-control'
