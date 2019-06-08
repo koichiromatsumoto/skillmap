@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_05_26_052816) do
 
-  create_table "answer_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "answer_details", force: :cascade do |t|
     t.integer "answer_id"
     t.integer "layer_id"
     t.integer "score"
@@ -20,21 +20,21 @@ ActiveRecord::Schema.define(version: 2019_05_26_052816) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
     t.integer "user_id"
     t.integer "count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.boolean "root", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "layers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "layers", force: :cascade do |t|
     t.integer "category1_id"
     t.integer "category2_id"
     t.integer "category3_id"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_05_26_052816) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.boolean "admin", default: false
     t.string "username"
     t.string "login"

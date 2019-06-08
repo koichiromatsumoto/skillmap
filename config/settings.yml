@@ -1,5 +1,5 @@
 defaults: &defaults
-  application_name: 'Application Name'
+  application_name: 'AI_skillmap'
 
 development:
   <<: *defaults
