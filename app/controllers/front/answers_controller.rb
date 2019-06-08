@@ -10,7 +10,7 @@ class Front::AnswersController < Front::BaseController
     last_answer = current_user.answers.last
 
     @answers = [].tap do |list|
-      Layer.includes(:user).references(:user).where(User.arel_table[:id].eq(nil).or(User.arel_table[:id].eq(current_user.id))).each do |layer|
+      Layer.includes(:user).references(:user).where(User.c[:id].eq(nil).or(User.arel_table[:id].eq(current_user.id))).each do |layer|
         detail = last_answer.details.find { |d| d.layer.id == layer.id }
         list << AnswerDetail.new(layer_id: layer.id, score: detail&.score || 0)
       end
