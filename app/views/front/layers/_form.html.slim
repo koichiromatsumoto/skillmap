@@ -45,7 +45,7 @@
                 .col-sm-12
                   .form-group.row
                     .col-sm-2
-                      = f.label :category2_id, 'カテゴリー2', class: 'col-from-label'
+                      = f.label :category2_id, 'カテゴリー5', class: 'col-from-label'
                     .col-sm-10
                       = f.select :category5_id, Category.where(root: false).pluck(:name, :id), { include_blank: true }, class: 'form-control'
 

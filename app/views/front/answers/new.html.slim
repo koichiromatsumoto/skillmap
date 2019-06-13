@@ -5,8 +5,9 @@
       .box-wrapper
         .box-header
           h2.box-title
+            = link_to '戻る', front_root_path
             .box-tools.float-right
-              = link_to '追加', new_front_layer_path, remote: true, class: 'btn btn-sm btn-secondary'
+              = link_to 'カテゴリー追加', new_front_layer_path, remote: true, class: 'btn btn-sm btn-secondary'
         .box-body
           table.table style="table-layout: fixed;"
             thead.thead-dark
