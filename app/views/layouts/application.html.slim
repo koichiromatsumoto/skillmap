@@ -6,7 +6,12 @@ html
     = csrf_meta_tags
   body
     nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-      = link_to Settings.application_name, '#', class: 'navbar-brand'
+     - if user_signed_in? && !current_user.admin?
+      = link_to Settings.application_name, front_root_path, class: 'navbar-brand'
+      button.navbar-toggler.d-lg-none aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarsExampleDefault" data-toggle="collapse" type="button"
+        span.navbar-toggler-icon
+     - if user_signed_in? && current_user.admin?
+      = link_to Settings.application_name, admin_root_path, class: 'navbar-brand'
       button.navbar-toggler.d-lg-none aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarsExampleDefault" data-toggle="collapse" type="button"
         span.navbar-toggler-icon
 

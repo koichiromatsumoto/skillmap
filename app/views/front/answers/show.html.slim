@@ -3,7 +3,15 @@
     .box-wrapper
       .box-header
         h2.box-title
-          = link_to '戻る', front_root_path
+          p
+           |
+            0.　聞いたことがない。あるいは聞いたことはあるが、全然分からない。<br>
+            1.　少し調べたことがあり、その流れは知っている。<br>
+            2.　基礎は把握しているが、未熟である。調べながら、もしくはヒントをもらえば、その通りにできる。<br>
+            3.　精通・熟練している。よく理解していて、既存の問題であればすぐに自分で解決できる。そこから発展した内容でも、他人と議論でき、理解できる。<br>
+            4.　とても良く理解していて、その基盤となる理論や基礎知識までも理解している。それらの経験を活かして新しい取り組みができ、研究する力が備わっている。<br>
+            5.　その分野全体をマスターしており、他人を指導することもできる。<br>
+          = link_to '戻る', front_root_path, class: 'btn btn-sm btn-primary'
       .box-body
         table.table style="table-layout: fixed;"
           thead.thead-dark
