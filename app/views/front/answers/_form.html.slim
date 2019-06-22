@@ -1,0 +1,12 @@
+.modal-dialog
+  .modal-content
+    .content-wrapper
+      section.content-body
+        .box-wrapper
+          .box-header
+            h2.box-title 新規登録
+          .box-body
+            = form_for category, url: front_categories_path, remote: true do |f|
+              = error_messages category
+              .text-center
+                = f.submit '登録する', class: 'btn btn-primary'

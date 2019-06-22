@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
     resources :answers, only: %i[index new show create]
     resources :layers, only: %i[new create]
+    resources :categories, only: %i[new create]
   end
 
   namespace :admin do

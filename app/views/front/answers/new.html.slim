@@ -1,3 +1,4 @@
+.category-modal.modal.fade tabindex="-1" role="dialog" aria-hedden="true"
 .layer-modal.modal.fade tabindex="-1" role="dialog" aria-hidden="true"
 .content-wrapper.new-answer
   section.content-body
@@ -15,7 +16,8 @@
             5.　その分野全体をマスターしており、他人を指導することもできる。<br>
           = link_to '戻る', front_root_path, class: 'btn btn-sm btn-primary'
           .box-tools.float-right
-             = link_to 'カテゴリー追加', new_front_layer_path, remote: true, class: 'btn btn-sm btn-secondary'
+             = link_to 'カテゴリー追加', new_front_category_path, remote: true, class: 'btn btn-sm btn-secondary'
+             = link_to '回答項目追加', new_front_layer_path, remote: true, class: 'btn btn-sm btn-secondary'
         .box-body
           table.table style="table-layout: fixed;"
             thead.thead-dark
