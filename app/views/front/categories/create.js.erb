@@ -1,2 +1,5 @@
-$('.new-answer tbody').append("<%= escape_javascript(render 'front/answers/new', answer: @answer) %>")
-$('.category-modal').modal('hide')
+<% if @category.errors.present? %>
+	$('.category-modal').html("<%= escape_javascript(render 'form', category: @category) %>")
+<% else %>
+	$('.category-modal').modal('hide')
+<% end %>

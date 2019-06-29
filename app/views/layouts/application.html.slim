@@ -9,13 +9,12 @@ html
      - if user_signed_in? && !current_user.admin?
       = link_to Settings.application_name, front_root_path, class: 'navbar-brand'
       button.navbar-toggler.d-lg-none aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarsExampleDefault" data-toggle="collapse" type="button"
-        span.navbar-toggler-icon
      - if user_signed_in? && current_user.admin?
       = link_to Settings.application_name, admin_root_path, class: 'navbar-brand'
       button.navbar-toggler.d-lg-none aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarsExampleDefault" data-toggle="collapse" type="button"
         span.navbar-toggler-icon
 
-      #navbarsExampleDefault.collapse.navbar-collapse
+     #navbarsExampleDefault.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
           - if user_signed_in? && current_user.admin?
             li.nav-item.active = link_to 'ユーザー管理', admin_users_path, class: 'nav-link'

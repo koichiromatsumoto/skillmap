@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      layer: 'レイヤー'
+    attributes:
+      layer:
+          id: 'ID'
+          category1_id: 'この組み合わせ'
