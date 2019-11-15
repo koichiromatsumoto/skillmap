@@ -1,5 +1,5 @@
 defaults: &defaults
-  application_name: 'AI_skillmap'
+  application_name: 'スキルマップ'
 
 development:
   <<: *defaults

@@ -6,10 +6,10 @@
           p
            |
             0.　聞いたことがない。あるいは聞いたことはあるが、全然分からない。<br>
-            1.　少し調べたことがあり、その流れは知っている。<br>
+            1.　少し調べたことがあり、流れは何となく知っている。<br>
             2.　基礎は把握しているが、未熟である。調べながら、もしくはヒントをもらえば、その通りにできる。<br>
-            3.　精通・熟練している。よく理解していて、既存の問題であればすぐに自分で解決できる。そこから発展した内容でも、他人と議論でき、理解できる。<br>
-            4.　とても良く理解していて、その基盤となる理論や基礎知識までも理解している。それらの経験を活かして新しい取り組みができ、研究する力が備わっている。<br>
+            3.　基礎が身についており、ある程度の応用にも対応できる。<br>
+            4.　精通・熟練している。よく理解していて、既存の問題であれば自分で解決できる。そこから発展した内容でも、他人と議論でき、理解できる。<br>
             5.　その分野全体をマスターしており、他人を指導することもできる。<br>
           - if user_signed_in? && !current_user.admin?
            = link_to '戻る', front_root_path, class: 'btn btn-sm btn-primary'
@@ -27,7 +27,7 @@
           tbody
             - @answer.details.each do |answer|
               tr
-                td = answer.layer.category1.name
+                td = answer.layer.category1&.name
                 td = answer.layer.category2&.name
                 td = answer.layer.category3&.name
                 td = answer.layer.category4&.name
