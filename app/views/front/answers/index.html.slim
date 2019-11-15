@@ -4,7 +4,7 @@
       .box-body
         = link_to "回答する", new_front_answer_path
 
-    h1 @user.username
+    h1 #{current_user.username}
 
     .box-wrapper
       .box-body

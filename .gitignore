@@ -25,3 +25,5 @@
 /vendor/bundle
 
 .env
+
+/db/seeds.rb
