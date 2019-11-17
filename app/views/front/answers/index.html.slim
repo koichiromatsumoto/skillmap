@@ -17,7 +17,8 @@
               tr
                 td = link_to "#{answer.count} 回目", front_answer_path(answer)
                 td = l answer.created_at, format: :long
-                - if answer.created_at != answer.updated_at
+                / 回答日時と更新日時が違う場合のみ更新日時を表示
+                - if answer.created_at != answer.updated_at 
                   td = l answer.updated_at, format: :long
                 - if answer.created_at == answer.updated_at
                   td
