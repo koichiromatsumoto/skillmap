@@ -13,6 +13,8 @@
             5.　その分野全体をマスターしており、他人を指導することもできる。<br>
           - if user_signed_in? && !current_user.admin?
            = link_to '戻る', front_root_path, class: 'btn btn-sm btn-primary'
+           - if @answer.count == @lastcount
+             = link_to '編集', edit_front_answer_path(@answer.id), class: 'btn btn-sm btn-primary'
       .box-body
         table.table style="table-layout: fixed;"
           thead.thead-dark

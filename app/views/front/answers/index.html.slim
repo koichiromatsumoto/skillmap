@@ -4,8 +4,6 @@
       .box-body
         = link_to "回答する", new_front_answer_path
 
-    h1 #{current_user.username}
-
     .box-wrapper
       .box-body
         table.table style="table-layout: fixed;"
@@ -13,8 +11,13 @@
             tr
               th 回数
               th 回答日時
+              th 更新日時
           tbody
             - current_user.answers.each do |answer|
               tr
                 td = link_to "#{answer.count} 回目", front_answer_path(answer)
                 td = l answer.created_at, format: :long
+                - if answer.created_at != answer.updated_at
+                  td = l answer.updated_at, format: :long
+                - if answer.created_at == answer.updated_at
+                  td

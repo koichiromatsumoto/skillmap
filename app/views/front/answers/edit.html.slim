@@ -1,0 +1,38 @@
+.category-modal.modal.fade tabindex="-1" role="dialog" aria-hedden="true"
+.layer-modal.modal.fade tabindex="-1" role="dialog" aria-hidden="true"
+.content-wrapper.new-answer
+  section.content-body
+    = form_tag front_answer_path(@answer), method: "patch" do
+      .box-wrapper
+        .box-header
+          h2.box-title
+          p
+           |
+            0.　聞いたことがない。あるいは聞いたことはあるが、全然分からない。<br>
+            1.　少し調べたことがあり、流れは何となく知っている。<br>
+            2.　基礎は把握しているが、未熟である。調べながら、もしくはヒントをもらえば、その通りにできる。<br>
+            3.　基礎が身についており、ある程度の応用にも対応できる。<br>
+            4.　精通・熟練している。よく理解していて、既存の問題であれば自分で解決できる。そこから発展した内容でも、他人と議論でき、理解できる。<br>
+            5.　その分野全体をマスターしており、他人を指導することもできる。<br>
+          = link_to '戻る', front_answer_path(@answer), class: 'btn btn-sm btn-primary'
+          .box-tools.float-right
+             = link_to 'カテゴリー追加', new_front_category_path, remote: true, class: 'btn btn-sm btn-secondary'
+             = link_to '回答項目追加', new_front_layer_path, remote: true, class: 'btn btn-sm btn-secondary'
+        .box-body
+          table.table style="table-layout: fixed;"
+            .space.thead-dark
+            thead.thead-dark.scrollHead
+              tr
+                th scope="col" カテゴリー1
+                th scope="col" カテゴリー2
+                th scope="col" カテゴリー3
+                th scope="col" カテゴリー4
+                th scope="col" カテゴリー5
+                th scope="col" カテゴリー6
+                th scope="col" レベル
+            tbody.scrollBody
+              - @answers.each do |answer|
+                = render 'new', answer: answer
+        .box-footer
+          .text-center
+            = submit_tag '編集する', class: 'btn btn-primary'

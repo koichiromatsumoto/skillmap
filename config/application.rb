@@ -35,5 +35,7 @@ module Skillmap
     config.autoload_paths << Rails.root.join('lib')
     config.enable_dependency_loading = true
 
+    config.web_console.whitelisted_ips = '10.0.2.2'
+
   end
 end

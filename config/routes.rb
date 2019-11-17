@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :front, path: '/' do
     root 'answers#index'
 
-    resources :answers, only: %i[index new show create]
+    resources :answers, only: %i[index new show create edit update]
     resources :layers, only: %i[new create]
     resources :categories, only: %i[new create]
   end

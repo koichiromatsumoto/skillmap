@@ -26,6 +26,7 @@ html
 
         ul.navbar-nav
           - if user_signed_in?
+            li = link_to current_user.username, front_root_path, class: 'nav-link'
             li = link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', method: :delete
           - else
             li = link_to 'ログイン', new_user_session_path, class: 'nav-link'
