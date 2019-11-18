@@ -2,6 +2,11 @@
   section.content-body
     .box-wrapper
       .box-body
+        h1 = @user.username
+        - if user_signed_in? && current_user.admin?
+           = link_to '戻る', admin_root_path, class: 'btn btn-sm btn-primary'
+        br
+        br
         table.table style="table-layout: fixed;"
           thead.thead-dark
             tr
@@ -10,5 +15,5 @@
           tbody
             - @answers.each do |answer|
               tr
-                td = link_to "#{answer.count} 回目", front_answer_path(answer)
+                td = link_to "#{answer.count} 回目", admin_user_answer_path(user_id: @user,id: answer)
                 td = l answer.created_at, format: :long

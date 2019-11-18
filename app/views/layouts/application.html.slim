@@ -26,7 +26,11 @@ html
 
         ul.navbar-nav
           - if user_signed_in?
-            li = link_to current_user.username, front_root_path, class: 'nav-link'
+            - if !current_user.admin?
+              li = link_to "パスワード変更", admin_user_edit_password_url(user_id: current_user), class: 'nav-link'
+              li = link_to current_user.username, front_root_path, class: 'nav-link'
+            - else
+              li = link_to current_user.username, admin_root_path, class: 'nav-link'
             li = link_to 'ログアウト', destroy_user_session_path, class: 'nav-link', method: :delete
           - else
             li = link_to 'ログイン', new_user_session_path, class: 'nav-link'

@@ -35,4 +35,5 @@ module ApplicationHelper
     when :error then :danger
     end
   end
+
 end

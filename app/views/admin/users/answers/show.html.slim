@@ -2,6 +2,14 @@
   section.content-body
     .box-wrapper
       .box-body
+        h1 = @user.username
+        h1
+          = @answer.count
+          | 回目
+        - if user_signed_in? && current_user.admin?
+           = link_to '戻る', admin_user_answers_path(@user), class: 'btn btn-sm btn-primary'
+        br
+        br
         table.table style="table-layout: fixed;"
           thead.thead-dark
             tr

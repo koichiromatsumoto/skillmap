@@ -96,3 +96,7 @@
   .box-wrapper.box-warning { border-top-color: $warning_color; }
   .box-wrapper.box-danger { border-top-color: $danger_color; }
 }
+
+.update_password .form_control{
+  width: 100%;
+}

@@ -1,0 +1,15 @@
+.content-wrapper
+  section.content-body
+    .box-wrapper
+      .box-header
+        h2.box-title ログイン
+      .box-body
+        = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+          .form-group
+            = f.label :login
+            = f.text_field :login, autofocus: true, autocomplete: true, placeholder: 'login', class: 'form-control'
+          .form-group
+            = f.label :password
+            = f.password_field :password, placeholder: 'password', class: 'form-control'
+
+          = f.submit 'ログイン', class: 'btn btn-primary'
