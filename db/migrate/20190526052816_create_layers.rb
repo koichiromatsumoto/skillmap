@@ -1,6 +1,6 @@
 class CreateLayers < ActiveRecord::Migration[5.2]
   def change
-    create_table :layers do |t|
+    create_table :layers, :options => 'ENGINE=InnoDB ROW_FORMAT=DYNAMIC' do |t|
       t.integer :category1_id
       t.integer :category2_id
       t.integer :category3_id
