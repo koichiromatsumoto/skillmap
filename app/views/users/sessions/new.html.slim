@@ -6,7 +6,7 @@
       .box-body
         = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
           .form-group
-            = f.label :UserID
+            = f.label :login
             = f.text_field :login, autofocus: true, autocomplete: true, placeholder: '(例)yamada-t', class: 'form-control'
           .form-group
             = f.label :password
